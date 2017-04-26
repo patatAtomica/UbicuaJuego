@@ -11,13 +11,19 @@ public class Bolas : MonoBehaviour {
 	void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        float xDir = Random.Range(-0.5f, 0.5f);
-        float zDir = Random.Range(-0.5f, 0.5f);
-
         
-        Vector3 direction = new Vector3(transform.position.x*xDir, transform.position.y, transform.position.z*zDir);
+        float signX = -1*Mathf.Sign(transform.position.x);
+        float signZ = -1*Mathf.Sign(transform.position.z);
+
+        float xDir = Random.Range(Mathf.Min(signX, 2*signX), Mathf.Max(signX, 2 * signX));
+        float zDir = Random.Range(Mathf.Min(signZ, 2 * signZ), Mathf.Max(signZ, 2 * signZ));
+        
+        
+        Vector3 direction = new Vector3(xDir, 0, zDir);
         //rb.velocity = direction * speed;
-        rb.velocity =  -transform.position * speed;
+        //rb.velocity =  (direction/direction.magnitude) * speed;
+        ArrayBolas.listabolas.Add(this);
+        rb.AddForce((direction / direction.magnitude) * speed, ForceMode.Impulse);
     }
 	
 	// Update is called once per frame

@@ -46,8 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ArrayBolas.cs" />
      <Compile Include="Assets\Scripts\Bolas.cs" />
      <Compile Include="Assets\Scripts\Destroy.cs" />
+     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Jugador1.cs" />
      <Compile Include="Assets\Scripts\LanzadorBolas.cs" />
      <Compile Include="Assets\Scripts\RandomLanzaBolas.cs" />

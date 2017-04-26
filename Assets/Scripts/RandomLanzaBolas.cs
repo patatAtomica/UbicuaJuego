@@ -12,7 +12,7 @@ public class RandomLanzaBolas : MonoBehaviour {
 
     void SeleccionarLanzador()
     {
-        var indice = Random.Range(0, 3);
+        var indice = Random.Range(0, 4);
         LanzaBolas[indice].GetComponent<LanzadorBolas>().LanzadorBola();     
     }
    
